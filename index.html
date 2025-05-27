@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redeem Your Server Boost</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e1e2f, #2e2e48);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      background: #2a2a3b;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      max-width: 400px;
+      width: 100%;
+      position: relative;
+    }
+
+    .form-container h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 24px;
+      color: #00ffcc;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      background: #40405a;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #00ffcc;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #00ffcc;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      color: #1e1e2f;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #00e6b8;
+    }
+
+    .error-message {
+      display: none;
+      background-color: #2b0000;
+      color: #ff4c4c;
+      border: 1px solid #ff4c4c;
+      padding: 12px 16px;
+      margin-top: 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      position: relative;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+
+    .error-message::before {
+      content: \"⚠️\";
+      margin-right: 8px;
+    }
+
+    .error-message .close-btn {
+      position: absolute;
+      right: 12px;
+      top: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #ff4c4c;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Redeem your Server Boost</h2>
+    <form id="redeemForm">
+      <div class="form-group">
+        <label for="code">Redeem Code</label>
+        <input type="text" id="code" name="code" placeholder="Enter your redeem code" required />
+      </div>
+      <div class="form-group">
+        <label for="server">Server Link</label>
+        <input type="text" id="server" name="server" placeholder="https://discord.gg/yourserver" required />
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="your@email.com" required />
+      </div>
+      <button type="submit">Redeem</button>
+    </form>
+
+    <div id="errorBox" class="error-message">
+      Key invalid shush
+      <span class="close-btn" onclick="document.getElementById('errorBox').style.display='none'">×</span>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('redeemForm').addEventListener('submit', function (e) {
+      e.preventDefault(); // Evita que se envíe realmente el formulario
+
+      // Simular un error como en tu imagen
+      const errorBox = document.getElementById('errorBox');
+      errorBox.style.display = 'block';
+    });
+  </script>
+</body>
+</html>
